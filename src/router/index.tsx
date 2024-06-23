@@ -6,10 +6,10 @@ import {fetchMe} from "../store/features/auth/meSlice"
 import {Role, User} from '../store/types/user'
 import {IState} from "../store/types/global"
 import Login from "../components/Login"
-import Movies from "../components/Movies"
 import Forbidden from "../components/Forbidden"
 import NotFound from "../components/NotFound"
 import Register from "../components/Register"
+import AdminIndex from '../components/AdminIndex'
 
 export type RouteItemType = {
     path: string
@@ -22,8 +22,8 @@ export type RouteItemType = {
 export const routes: Array<RouteItemType> = [
     {
         path: '/',
-        component: Movies,
-        authRequired: true,
+        component: AdminIndex,
+        authRequired: false,
     },
     {
         path: '/auth',
@@ -41,20 +41,17 @@ export const routes: Array<RouteItemType> = [
         ]
     },
     {
-        path: '/gain',
+        path: '/admin',
         authRequired: true,
-        component: Movies,
+        component: AdminIndex,
         role: [
             {name: 'ADMIN'}
         ],
         routes: [
             {
-                path: '/movies',
-                component: Movies,
-                // authRequired: false, // TODO: this should work
-                role: [
-                    {name: 'ADMIN'}
-                ]
+                path: '/',
+                component: AdminIndex,
+                authRequired: false, // FIXME: this should work
             }
         ]
     },

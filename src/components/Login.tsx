@@ -18,7 +18,7 @@ function Login(): React.JSX.Element {
     useEffect((): void => {
         if (!loginSlice.isLoading && loginSlice.response !== null) {
             dispatch(fetchMe())
-            navigate('/gain')
+            navigate('/')
             setError("")
             return
         }

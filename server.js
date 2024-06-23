@@ -32,13 +32,12 @@ function isAuthenticated({email, password}) {
 
 // Register New User
 server.post('/auth/register', (req, res) => {
-    console.log("register endpoint called; request body:");
-    console.log(req.body);
+    console.log("register endpoint called; request body:", req.body)
     const {email, password} = req.body;
 
     if (isAuthenticated({email, password}) === true) {
         const status = 401;
-        const message = 'Email and Password already exist';
+        const message = 'Email and Password already exist'
         res.status(status).json({status, message});
         return
     }
@@ -117,6 +116,6 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
 
 server.use(router)
 
-server.listen(8000, () => {
-    console.log('http://localhost:8000')
+server.listen(8001, () => {
+    console.log('http://localhost:8001')
 })

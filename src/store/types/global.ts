@@ -10,7 +10,7 @@ export interface ErrorResponse {
         error: {
             id: string
             text: string
-        };
+        }
         variables: string[]
     }
 }

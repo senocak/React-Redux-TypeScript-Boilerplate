@@ -5,7 +5,6 @@ import {IState} from '../store/types/global'
 import {Role, User} from '../store/types/user'
 import {resetMe} from "../store/features/auth/meSlice"
 import {logout} from "../store/features/auth/loginSlice"
-import {resetMovies} from "../store/features/auth/moviesSlice";
 
 function App(): React.JSX.Element {
     const dispatch = useAppDispatch()
@@ -41,8 +40,8 @@ function App(): React.JSX.Element {
             <>
                 {
                     isAuthorized && <>
-                        <Link to={`/gain`}>
-                            <button>Gain</button>
+                        <Link to={`/admin/`}>
+                            <button>Admin</button>
                         </Link>
                         Hoşgeldin, {me.response.email}
                     </>
@@ -50,7 +49,6 @@ function App(): React.JSX.Element {
                 <button onClick={(): void => {
                     dispatch(logout())
                     dispatch(resetMe())
-                    dispatch(resetMovies())
                 }}>Çıkış
                 </button>
                 {(error !== null && error !== "") && <p>{JSON.stringify(error)}</p>}
