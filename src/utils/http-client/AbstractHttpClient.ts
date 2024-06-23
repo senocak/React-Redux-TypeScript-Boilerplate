@@ -122,11 +122,14 @@ export default abstract class AbstractHttpClient {
         if (401 === statusCode) {
             await this._removeTokensFromStorage()
             this._removeUserStore()
+            console.error("401 error occurred")
             //history.push('/auth/login')
         } else if (403 === statusCode) {
             //console.error(i18next.t('errors_types.forbidden'))
+            console.error("403 error occurred")
             //history.push('/auth/login')
         } else if (500 <= statusCode) {
+            console.error("5xx error occurred")
             //console.error(i18next.t('errors_types.unsuccessful'))
             //history.push('/auth/login')
         }

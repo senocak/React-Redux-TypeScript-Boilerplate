@@ -37,4 +37,5 @@ export default class UserApiClient extends AbstractHttpClient {
     }
 
     public me = async () => await this.instance.get('/me')
+    public movies = async (_page: number, _limit: number) => await this.instance.get(`/movies?_page=${_page}&_limit=${_limit}`)
 }

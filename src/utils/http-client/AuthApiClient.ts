@@ -39,6 +39,7 @@ export default class AuthApiClient extends AbstractHttpClient {
 
         if (originalRequest!.headers.Authorization && 401 === statusCode) {
             await this._removeTokensFromStorage()
+            console.error("Authorization error occurred")
             history.push('/auth/login')
         }
 
@@ -60,21 +61,4 @@ export default class AuthApiClient extends AbstractHttpClient {
 
     public register = async (params: IRegisterParams) =>
         await this.instance.post('/auth/register', params)
-
-    public resendEmailActivation = async (email: string) =>
-        await this.instance.post(`/auth/resend-email-activation/${email}`)
-
-    public logout = async () =>
-        await this.instance.post(`/auth/logout`)
-
-    public resetPassword = async (email: string) =>
-        await this.instance.post(`/auth/reset-password/${email}`)
-
-    /**
-     * Refresh token.
-     */
-    public refresh = async () => {
-        this._initializeRequestForRefresh()
-        return await this.instance.patch('/auth/refresh')
-    }
 }
