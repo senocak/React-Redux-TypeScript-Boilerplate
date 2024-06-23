@@ -1,0 +1,17 @@
+### Login
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+  "email": "bruno@email.com",
+  "password":"bruno@email.com"
+}
+
+### Get Me
+GET http://localhost:8000/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJydW5vQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiYnJ1bm9AZW1haWwuY29tIiwiaWF0IjoxNzE5MDc4OTM4LCJleHAiOjE3MTkwODI1Mzh9.Tua5vo74vD31kUTApJMkfRnLBYB8SPiV7CE9CqBfVBM
+
+
+### Get Movies
+GET http://localhost:8000/movies?_page=0&_limit=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJydW5vQGVtYWlsLmNvbSIsInBhc3N3b3JkIjoiYnJ1bm9AZW1haWwuY29tIiwiaWF0IjoxNzE5MDc4OTM4LCJleHAiOjE3MTkwODI1Mzh9.Tua5vo74vD31kUTApJMkfRnLBYB8SPiV7CE9CqBfVBM

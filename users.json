@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "bruno@email.com",
+      "password": "bruno@email.com",
+      "roles": [
+        {
+          "name": "ADMIN"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "email": "techie@email.com",
+      "password": "techie@email.com",
+      "roles": [
+        {
+          "name": "ADMIN"
+        },
+        {
+          "name": "USER"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "email": "nilson@email.com",
+      "password": "nilson@email.com",
+      "roles": [
+        {
+          "name": "USER"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "email": "anil2@senocak.com",
+      "password": "louie.Stehr1"
+    }
+  ]
+}
